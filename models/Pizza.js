@@ -17,7 +17,7 @@ const PizzaSchema = new Schema(
       default: "Large",
     },
     toppings: [],
-    commments: [
+    comments: [
       {
         type: Schema.Types.ObjectId,
         ref: "Comment",
@@ -34,7 +34,7 @@ const PizzaSchema = new Schema(
 
 // get total count of comment and replies on retrieval
 PizzaSchema.virtual("commentCount").get(function () {
-  return this.commments.length;
+  return this.comments.length;
 });
 
 // create the Pizza model using the pizzaSchema
